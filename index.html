@@ -1,9 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Tutoriel GSAP Interactif</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
 	</head>
-	<body></body>
+	<body>
+		<div class="container">
+			<nav class="container" id="chapitres">
+				<!-- La navigation sera générée dynamiquement ici -->
+			</nav>
+			<main id="contenu">
+				<!-- Le contenu du chapitre sera chargé ici -->
+			</main>
+			<div id="animation-zone">
+				<svg
+					id="knight-green"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 64 64"
+					width="64"
+					height="64"
+				>
+					<rect x="24" y="8" width="16" height="16" fill="#2ecc71" />
+					<rect x="20" y="24" width="24" height="24" fill="#2ecc71" />
+					<rect x="16" y="48" width="12" height="8" fill="#2ecc71" />
+					<rect x="36" y="48" width="12" height="8" fill="#2ecc71" />
+					<rect x="28" y="16" width="8" height="8" fill="#27ae60" />
+					<rect x="24" y="32" width="16" height="8" fill="#27ae60" />
+					<!-- Visage -->
+					<rect x="28" y="12" width="8" height="8" fill="#f39c12" />
+					<rect x="30" y="14" width="2" height="2" fill="#2c3e50" />
+					<rect x="34" y="14" width="2" height="2" fill="#2c3e50" />
+					<rect x="30" y="18" width="6" height="2" fill="#e67e22" />
+					<!-- Épée -->
+					<rect x="44" y="24" width="4" height="12" fill="#bdc3c7" />
+					<rect x="42" y="36" width="8" height="4" fill="#7f8c8d" />
+				</svg>
+				<svg
+					id="knight-blue"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 64 64"
+					width="64"
+					height="64"
+				>
+					<rect x="24" y="8" width="16" height="16" fill="#3498db" />
+					<rect x="20" y="24" width="24" height="24" fill="#3498db" />
+					<rect x="16" y="48" width="12" height="8" fill="#3498db" />
+					<rect x="36" y="48" width="12" height="8" fill="#3498db" />
+					<rect x="28" y="16" width="8" height="8" fill="#2980b9" />
+					<rect x="24" y="32" width="16" height="8" fill="#2980b9" />
+					<!-- Visage -->
+					<rect x="28" y="12" width="8" height="8" fill="#f39c12" />
+					<rect x="30" y="14" width="2" height="2" fill="#2c3e50" />
+					<rect x="34" y="14" width="2" height="2" fill="#2c3e50" />
+					<rect x="30" y="18" width="6" height="2" fill="#e67e22" />
+					<!-- Bouclier -->
+					<rect x="16" y="28" width="8" height="12" fill="#ecf0f1" />
+					<rect x="18" y="30" width="4" height="8" fill="#3498db" />
+				</svg>
+				<svg
+					id="knight-red"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 64 64"
+					width="64"
+					height="64"
+				>
+					<rect x="24" y="8" width="16" height="16" fill="#e74c3c" />
+					<rect x="20" y="24" width="24" height="24" fill="#e74c3c" />
+					<rect x="16" y="48" width="12" height="8" fill="#e74c3c" />
+					<rect x="36" y="48" width="12" height="8" fill="#e74c3c" />
+					<rect x="28" y="16" width="8" height="8" fill="#c0392b" />
+					<rect x="24" y="32" width="16" height="8" fill="#c0392b" />
+					<!-- Visage -->
+					<rect x="28" y="12" width="8" height="8" fill="#f39c12" />
+					<rect x="30" y="14" width="2" height="2" fill="#2c3e50" />
+					<rect x="34" y="14" width="2" height="2" fill="#2c3e50" />
+					<rect x="30" y="18" width="6" height="2" fill="#e67e22" />
+					<!-- Casque -->
+					<rect x="24" y="8" width="16" height="4" fill="#95a5a6" />
+					<rect x="22" y="10" width="2" height="8" fill="#95a5a6" />
+					<rect x="40" y="10" width="2" height="8" fill="#95a5a6" />
+				</svg>
+			</div>
+			<div id="exemple">
+				<pre><code id="code-editor" class="language-javascript" contenteditable="true"></code></pre>
+			</div>
+
+			<div id="quiz">
+				<!-- L'introduction du quiz et le bouton seront chargés ici dynamiquement -->
+			</div>
+
+			<div id="modal-quiz" class="modal">
+				<div class="modal-content">
+					<span class="fermer-modal">&times;</span>
+					<div id="quiz-content">
+						<!-- Le contenu du quiz sera généré ici -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
 </html>

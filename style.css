@@ -1,0 +1,287 @@
+:root {
+	--primary-color: #ff6b6b;
+	--secondary-color: #4ecdc4;
+	--background-color: #f7fff7;
+	--text-color: #1a535c;
+	--code-bg-color: rgb(43, 43, 43);
+	--accent-color: #a5b4fb;
+	--base: #0c0c0e;
+	--dd-green: #2ac670;
+	--dd-orange: #e65f3f;
+	--white: white;
+	--color-2: #5b5c63;
+	--blue: #3fa1f2;
+	--moke: #eeecea;
+	--black: black;
+}
+
+body {
+	font-family: "Arial", sans-serif;
+	background-color: var(--base);
+	color: var(--text-color);
+	line-height: 1.6;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.container {
+	max-width: 1200px; /* Vous pouvez ajuster cette valeur selon vos préférences */
+	width: 90%; /* Cela permet un peu de flexibilité sur les écrans plus petits */
+	margin: 0 auto; /* Centre le contenu */
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: var(--white);
+}
+
+p,
+ul,
+li {
+	color: var(--white);
+}
+
+nav {
+	width: 100%;
+	background-color: #fb8569;
+	padding: 10px 0;
+}
+
+nav .container {
+	display: flex;
+	justify-content: flex-start;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+nav a {
+	color: var(--background-color);
+	text-decoration: none;
+	font-weight: bold;
+	margin-right: 15px;
+	transition: transform 0.3s ease;
+}
+
+nav a:hover {
+	transform: scale(1.1) rotate(2deg);
+}
+
+main {
+	flex-grow: 1;
+}
+
+#animation-zone {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+	margin: 20px 0;
+	border: 2px dashed rgba(255, 255, 255, 0.08);
+	background-color: rgba(255, 255, 255, 0.03);
+	border-radius: 12px;
+	/* box-shadow: 10px 10px 0 var(--accent-color); */
+}
+
+#animation-zone svg {
+	display: none;
+	width: 64px;
+	height: 64px;
+	margin: 0 10px;
+}
+
+#animation-zone svg.visible {
+	display: inline-block;
+}
+
+#exemple {
+	margin: 20px 0 20px 0;
+	border: 2px dashed rgba(255, 255, 255, 0.08);
+	background-color: rgba(255, 255, 255, 0.03);
+	border-radius: 12px;
+	padding: 20px;
+	/* background-color: var(--secondary-color); */
+}
+
+#code-editor,
+pre code {
+	display: block;
+	/* width: 100%; */
+	/* min-height: 200px; */
+	margin-top: 10px;
+	padding: 20px;
+	/* border: 2px dashed rgba(255, 255, 255, 0.08); */
+	background-color: rgba(255, 255, 255, 0.03);
+	border-radius: 12px;
+	color: var(--background-color);
+	font-family: "Courier New", monospace;
+	font-size: 16px;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	/* box-shadow: -5px 5px 0 var(--primary-color); */
+	overflow-x: auto;
+}
+
+#btn-executer,
+button {
+	background-color: #161617;
+	color: #fb8569;
+	border: 1px solid #fb8569;
+	border-radius: 8px;
+	padding: 10px 20px;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 10px;
+	position: relative;
+	transition: all 0.5s ease;
+}
+
+#btn-executer:hover,
+button:hover {
+	background-color: #fb8569;
+	color: #161617;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+	background-color: #161617;
+	margin: 15% auto;
+	padding: 20px;
+	border: 2px dashed rgba(255, 255, 255, 0.08);
+	width: 80%;
+	max-width: 600px;
+}
+
+.fermer-modal {
+	color: #fb8569;
+	float: right;
+	font-size: 32px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.fermer-modal:hover,
+.fermer-modal:focus {
+	color: var(--primary-color);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#quiz-content {
+	margin-top: 20px;
+}
+
+#resultatQuiz {
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+	body {
+		padding: 10px;
+	}
+
+	#animation-zone {
+		height: auto;
+		flex-wrap: wrap;
+	}
+
+	#animation-zone svg {
+		margin: 5px;
+	}
+
+	#code-editor,
+	pre code {
+		font-size: 14px;
+	}
+
+	.modal-content {
+		width: 95%;
+		margin: 10% auto;
+	}
+}
+
+/* Styles pour Prism.js */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #a9def9;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #ff79c6;
+}
+
+.token.boolean,
+.token.number {
+	color: #bd93f9;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #50fa7b;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #f1fa8c;
+}
+
+.token.keyword {
+	color: #ff79c6;
+}
+
+.token.regex,
+.token.important {
+	color: #ffb86c;
+}
