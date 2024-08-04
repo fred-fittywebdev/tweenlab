@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TweenLab - Éditeur Web</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/monokai.min.css"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/xml/xml.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>TweenLab - Éditeur Web</h1>
+			<div class="editor-container">
+				<div class="editor-section">
+					<h2>HTML</h2>
+					<textarea id="html-editor"></textarea>
+				</div>
+				<div class="editor-section">
+					<h2>CSS</h2>
+					<textarea id="css-editor"></textarea>
+				</div>
+				<div class="editor-section">
+					<h2>JavaScript</h2>
+					<textarea id="js-editor"></textarea>
+				</div>
+			</div>
+			<button id="run-code">Exécuter le code</button>
+			<div id="preview">
+				<iframe id="preview-frame"></iframe>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
